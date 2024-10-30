@@ -9,12 +9,14 @@ import { useRouter } from "next/navigation";
 
 import { useState } from "react"
 import CartModal from "./cart-modal";
+import Notifications from "./notifications";
 
 
 const NavIcons = () => {
     const router = useRouter();
-    const [isProfileOpen, setIsProfileOpen] = useState(false)
-    const [isCartOpen, setIsCartOpen] = useState(false)
+    const [isProfileOpen, setIsProfileOpen] = useState(false);
+    const [isCartOpen, setIsCartOpen] = useState(false);
+    const [isNotificationOpen, setIsNotificationOpen] = useState(false);
 
 
     const isLoggedIn = false
@@ -25,6 +27,7 @@ const NavIcons = () => {
         }
         setIsProfileOpen((prev) => !prev);
     }
+
     return (
         <div className="flex items-center gap-4 xl:gap-6 relative">
             <Image src="/profile.png" alt="" width={22} height={22} className="cursor-pointer" onClick={handleProfile} />
@@ -32,8 +35,10 @@ const NavIcons = () => {
                 <div className="absolute p-4 rounded-md top-12 left-0 text-sm shadow-[0_3px_10px_rgb(0,0,0,0.2)]">
                     <Link href="/">Profile</Link>
                     <div className="mt-2 cursor-pointer">Logout</div>
-                </div>)}
-            <Image src="/notification.png" alt="" width={22} height={22} className="cursor-pointer" />
+                </div>)
+            }
+            <Image src="/notification.png" alt="" width={22} height={22} className="cursor-pointer" onClick={() => setIsNotificationOpen((prev) => !prev )}/>
+            {isNotificationOpen && <Notifications />}
             <div className="relative cursor-pointer">
                 <Image src="/cart.png" alt="" width={22} height={22} className="cursor-pointer" onClick={() => setIsCartOpen((prev) => !prev)} />
                 <div className="absolute -top-4 -right-4 w-6 h-6 bg-lama rounded-full  text-sm flex items-center justify-center text-white">2</div>

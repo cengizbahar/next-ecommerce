@@ -12,7 +12,7 @@ const Menu = () => {
             <Image src="/menu.png" alt="deneme" width={28} height={28} className="cursor-pointer" onClick={() =>setOpen((prev) => !prev)}/>
             {
                 open && (
-                    <div className="absolute bg-black text-white left-0 top-20 w-full flex flex-col items-center justify-center gap-8 text-xl z-10 h-[calc(100vh-80)]">
+                    <div className="absolute bg-black text-white left-0 top-20 w-full flex flex-col items-center justify-center gap-8 text-xl z-10 h-[calc(100vh-80px)]">
                         <Link href="/">Anasayfa</Link>
                         <Link href="/">Mağaza</Link>
                         <Link href="/">Hakkımızda</Link>
