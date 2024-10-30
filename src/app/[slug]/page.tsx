@@ -2,7 +2,7 @@ import React from 'react'
 
 const SinglePage = () => {
   return (
-    <div>page</div>
+    <div>Single Page</div>
   )
 }
 
