@@ -1,6 +1,6 @@
 Windows Create 
-npm install create-next-app@latest --save
-npx create-next-app@latest
+- npm install create-next-app@latest --save
+- npx create-next-app@latest
 
 ## Getting Started
 
